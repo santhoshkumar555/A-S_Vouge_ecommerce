@@ -7,7 +7,7 @@ const SuccessPage = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  const orderId = searchParams.get("orderId");
+ // const orderId = searchParams.get("orderId");
 
   useEffect(() => {
     if (!orderId) return;
