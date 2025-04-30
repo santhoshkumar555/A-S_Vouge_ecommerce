@@ -30,10 +30,10 @@ const handleCheckout = async () => {
         if (!data.sessionId) throw new Error("❌ No session ID received");
 
         const stripeKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
-if (!stripeKey) throw new Error("❌ Stripe publishable key is not defined");
+        if (!stripeKey) throw new Error("❌ Stripe publishable key is not defined");
 
-const stripe = await loadStripe(stripeKey);
-if (!stripe) throw new Error("❌ Stripe failed to load");
+        const stripe = await loadStripe(stripeKey);
+        if (!stripe) throw new Error("❌ Stripe failed to load");
 
 
         const { error } = await stripe.redirectToCheckout({ sessionId: data.sessionId });
